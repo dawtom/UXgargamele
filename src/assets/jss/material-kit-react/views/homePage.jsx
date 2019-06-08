@@ -1,4 +1,4 @@
-import { container, title } from "assets/jss/material-kit-react.jsx";
+import {container, title} from "assets/jss/material-kit-react.jsx";
 import headerLinksStyle from "../components/headerLinksStyle.jsx";
 import navbarsStyle from '../views/componentsSections/navbarsStyle'
 
@@ -6,7 +6,51 @@ const landingPageStyle = {
     container: {
         zIndex: "12",
         color: "#FFFFFF",
-        ...container
+        flexWrap: 'wrap',
+        "& span": {
+            justifyContent: 'left'
+        },
+        ...container,
+    },
+    centeredContainer: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+    },
+    centeredInRow: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        flexDirection: 'row',
+        alignItems: 'center',
+        "& a": {
+            whiteSpace: 'pre-wrap !important'
+        },
+    },
+    centeredInColumns: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        alignItems: 'center',
+        "& a": {
+            whiteSpace: 'pre-wrap !important'
+        },
+    },
+    image: {
+        height: '60%',
+        marginRight: '20px'
+    },
+    communicate: {
+        width: '100%',
+        backgroundColor: '#f5f5f5',
+        height: '150px',
+        margin: '1rem 0',
+        padding: '1rem',
+        borderRadius: '1rem',
+        color: 'black',
+        display: 'flex',
+        justifyContent: 'space-between'
     },
     title: {
         ...title,
@@ -34,6 +78,11 @@ const landingPageStyle = {
         borderRadius: "6px",
         boxShadow:
             "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)"
+    },
+    button: {
+        width: '100%',
+        height: '150px',
+        borderRadius: '1rem',
     }
 };
 

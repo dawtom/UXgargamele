@@ -9,10 +9,11 @@ import GridItem from "components/Grid/GridItem.jsx";
 import Button from '../../components/CustomButtons/Button'
 import homePageStyle from "assets/jss/material-kit-react/views/homePage.jsx";
 import warning from 'assets/img/warning.svg'
+import info from 'assets/img/info.svg'
 
 const dashboardRoutes = [];
 
-class HomePage extends React.Component {
+class Messages extends React.Component {
 
     render() {
         const {classes, ...rest} = this.props;
@@ -40,32 +41,32 @@ class HomePage extends React.Component {
                                                 <img src={warning} className={classes.image}/>
                                                 <span>Drzwi frontowe otwarte</span>
                                             </div>
-                                            <div className={classes.centeredInRow}>
-                                                <Button color='danger' simple href='/messages'>Wszystkie 3 komunikaty</Button>
+                                            <div className={classes.centeredInColumns}>
+                                                <Button color='gray'>Odrzuć</Button>
                                                 <Button color='secondary'>Zamknij</Button>
+                                            </div>
+                                        </div>
+                                        <div className={classes.communicate}>
+                                            <div className={classes.centeredContainer}>
+                                                <img src={warning} className={classes.image}/>
+                                                <span>Ciepła woda jest wykorzystywan w łazience od 30 minut</span>
+                                            </div>
+                                            <div className={classes.centeredInColumns}>
+                                                <Button color='gray'>Odrzuć</Button>
+                                                <Button color='secondary'>Zakręć</Button>
+                                            </div>
+                                        </div>
+                                        <div className={classes.communicate}>
+                                            <div className={classes.centeredContainer}>
+                                                <img src={info} className={classes.image}/>
+                                                <span>Pralka przestała działać</span>
+                                            </div>
+                                            <div className={classes.centeredInColumns}>
+                                                <Button color='secondary'>Ok</Button>
                                             </div>
                                         </div>
                                     </div>
                                 </GridItem>
-                            </GridItem>
-                            <GridItem xs={12} sm={12} md={12}>
-                                <div className={classes.centeredContainer}>
-                                    <GridItem xs={12} sm={12} md={6}>
-                                        <Button size='lg' color='primary' className={classes.button}>Alarmy i
-                                            zabezpieczenia</Button>
-                                    </GridItem>
-                                    <GridItem xs={12} sm={12} md={6}>
-                                        <Button size='lg' color='primary' className={classes.button}>Temperatura i
-                                            światło</Button>
-                                    </GridItem>
-                                    <GridItem xs={12} sm={12} md={6}>
-                                        <Button size='lg' color='primary'
-                                                className={classes.button}>Gastronomia</Button>
-                                    </GridItem>
-                                    <GridItem xs={12} sm={12} md={6}>
-                                        <Button size='lg' color='primary' className={classes.button}>Higiena</Button>
-                                    </GridItem>
-                                </div>
                             </GridItem>
                         </GridContainer>
                     </div>
@@ -75,4 +76,4 @@ class HomePage extends React.Component {
     }
 }
 
-export default withStyles(homePageStyle)(HomePage);
+export default withStyles(homePageStyle)(Messages);
