@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
@@ -34,20 +33,17 @@ function MediaControlCard(props) {
   const { deviceName, image, link, classes } = props;
 
   return (
-      <Card className={classes.card}>
-        <CardMedia onClick={() => window.location = link}
-            className={classes.cover}
-            image={image}
-            title={deviceName}
-            style={{cursor: "pointer"}}
-        />
-        {/*<div className={classes.details}>*/}
-          <CardContent style={{textAlign: "center"}} className={classes.content}>
-            <Button variant="contained" color="primary" size="large" href={link} className={classes.button}>
+      <Card style={{display: "flex"}} className={classes.card}>
+          <img onClick={() => window.location = link}
+                     src={image}
+                     alt={deviceName}
+                     style={{cursor: "pointer", width: "15vh", height: "15vh"}}
+          />
+          <CardContent style={{textAlign: "center", display: "grid", verticalAlign: "middle"}} className={classes.content}>
+            <Button variant="contained" color="primary" size="large" href={link} style={{margin: "2vh"}} className={classes.button}>
               {deviceName}
             </Button>
           </CardContent>
-        {/*</div>*/}
       </Card>
   );
 }
