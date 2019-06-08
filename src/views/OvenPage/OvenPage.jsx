@@ -14,6 +14,10 @@ import GridItem from "components/Grid/GridItem.jsx";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
 import info from 'assets/img/info.svg'
+import timer from 'assets/img/timer.svg'
+import thermometer from 'assets/img/thermometer.svg'
+import clock from 'assets/img/time.svg'
+import TextField from '@material-ui/core/TextField';
 
 const dashboardRoutes = [];
 
@@ -202,62 +206,47 @@ class OvenPage extends React.Component {
                     {...rest}
                 />
                 <div className={classNames(classes.main, classes.mainRaised)}>
-                    <GridItem className={classes.container}>
-                        <GridContainer justify="center">
-                            <GridItem item xs={6} sm={6} md={6}>
-                                <img height={imgSize} width={imgSize} src={oven_img}/>
+                    <div className={classes.container}>
+                        <GridContainer>
+                            <GridItem item xs={12} sm={10} md={4} style={{
+                                marginTop: '50px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'space-between'
+                            }}>
+                                <div>
+                                    <img height={imgSize} width={imgSize} src={oven_img}/>
+                                </div>
+                                <div>
+                                    <div className={classes.option}>
+                                        <img src={clock}/>
+                                        <TextField type='time' defaultValue='15:30' InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                                   inputProps={{
+                                                       step: 300, // 5 min
+                                                   }}/>
+                                    </div>
+                                    <div className={classes.option}>
+                                        <img src={timer}/>
+                                        <TextField type='time' defaultValue='15:30' InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                                   inputProps={{
+                                                       step: 300, // 5 min
+                                                   }}/>
+                                    </div>
+                                    <div className={classes.option}>
+                                        <img src={thermometer}/>
+                                        <TextField type='time' defaultValue='200' InputLabelProps={{
+                                            shrink: true,
+                                        }}
+                                                   inputProps={{
+                                                       step: 300, // 5 min
+                                                   }}/>
+                                    </div>
+                                </div>
                             </GridItem>
-                            <GridItem item xs={6} sm={6} md={6}>
-                                <GridItem item xs={12} sm={12} md={12}>
-                                    <Button justIcon round color="primary"><Favorite
-                                        style={{color: "#FFFFFF"}}/></Button>
-                                    <Button justIcon round color="primary"><Favorite
-                                        style={{color: "#FFFFFF"}}/></Button>
-                                    <Button justIcon round color="primary"><Favorite
-                                        style={{color: "#FFFFFF"}}/></Button>
-                                </GridItem>
-                                <GridItem item xs={12} sm={12} md={12}>
-                                    <Button justIcon round color="primary"><Favorite
-                                        style={{color: "#FFFFFF"}}/></Button>
-                                    <Button justIcon round color="primary"><Favorite
-                                        style={{color: "#FFFFFF"}}/></Button>
-                                    <Button justIcon round color="primary"><Favorite
-                                        style={{color: "#FFFFFF"}}/></Button>
-                                </GridItem>
-                                <GridItem item xs={12} sm={12} md={12}>
-                                    <Button justIcon round color="primary"><Favorite
-                                        style={{color: "#FFFFFF"}}/></Button>
-                                    <Button justIcon round color="primary"><Favorite
-                                        style={{color: "#FFFFFF"}}/></Button>
-                                    <Button justIcon round color="primary"><Favorite
-                                        style={{color: "#FFFFFF"}}/></Button>
-                                </GridItem>
-                            </GridItem>
-                            {/*
-                            <div className={"main"}>
-
-                                <span>
-                                    <div>
-                                        <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                        <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                        <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                    </div>
-                                    <div>
-                                        <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                        <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                        <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                    </div>
-                                    <div>
-                                        <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                        <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                        <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                    </div>
-                                </span>
-                            </div>*/}
-
-
-                            {/*GIT CONFLICT BORDER! DO NOT CROSS*/}
-
                             <GridItem item xs={12} sm={12} md={12} style={{marginTop: '50px'}}>
                                 <GridItem item xs={12} sm={12} md={12} className={classes.buttons}>
                                     <Button color='primary' simple onClick={this.setAdvancedTab}>Zaawansowane</Button>
@@ -271,10 +260,11 @@ class OvenPage extends React.Component {
                                 </GridItem>
                             </GridItem>
                         </GridContainer>
-                    </GridItem>
+                    </div>
                 </div>
             </div>
-        );
+        )
+            ;
     }
 }
 

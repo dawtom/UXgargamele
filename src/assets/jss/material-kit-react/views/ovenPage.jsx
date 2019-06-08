@@ -23,6 +23,12 @@ const landingPageStyle = {
             marginBottom: '20px'
         }
     },
+    option: {
+      padding: '1rem',
+        '& img': {
+          marginRight: '10px'
+        }
+    },
     buttons: {
         "& button:first-of-type": {
             paddingLeft: 0,
