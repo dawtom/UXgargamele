@@ -21,7 +21,7 @@ class HomePage extends React.Component {
                 <Header
                     color="primary"
                     routes={dashboardRoutes}
-                    brand="UXgargamele"
+                    brand="Smart Home"
                     fixed
                     changeColorOnScroll={{
                         height: 400,
@@ -59,7 +59,7 @@ class HomePage extends React.Component {
                                             światło</Button>
                                     </GridItem>
                                     <GridItem xs={12} sm={12} md={6}>
-                                        <Button size='lg' color='primary'
+                                        <Button size='lg' color='primary' href="/kitchen"
                                                 className={classes.button}>Gastronomia</Button>
                                     </GridItem>
                                     <GridItem xs={12} sm={12} md={6}>

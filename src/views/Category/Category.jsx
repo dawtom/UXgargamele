@@ -28,6 +28,7 @@ class HomePage extends React.Component {
                         height: 400,
                         color: "white"
                     }}
+                    backAvailable={true}
                     {...rest}
                 />
                 <div style={{padding: "2vh"}} className={classNames(classes.main, classes.mainRaised)}>

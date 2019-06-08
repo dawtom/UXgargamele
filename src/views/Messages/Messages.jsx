@@ -22,12 +22,13 @@ class Messages extends React.Component {
                 <Header
                     color="primary"
                     routes={dashboardRoutes}
-                    brand="UXgargamele"
+                    brand="Komunikaty"
                     fixed
                     changeColorOnScroll={{
                         height: 400,
                         color: "white"
                     }}
+                    backAvailable={true}
                     {...rest}
                 />
                 <div className={classNames(classes.main, classes.mainRaised)}>
