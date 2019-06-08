@@ -85,10 +85,10 @@ class OvenPage extends React.Component {
                             </div>*/}
 
 
+                            {/*GIT CONFLICT BORDER! DO NOT CROSS*/}
 
                         </GridContainer>
 
-                        {/*GIT CONFLICT BORDER! DO NOT CROSS*/}
                     </div>
                 </div>
             </div>
