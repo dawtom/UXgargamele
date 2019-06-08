@@ -8,6 +8,10 @@ import GridContainer from "components/Grid/GridContainer.jsx";
 import ovenPageStyle from "assets/jss/material-kit-react/views/ovenPage.jsx";
 import Button from 'components/CustomButtons/Button.jsx';
 import oven_img from "../../assets/img/oven.png"
+import clock from "../../assets/img/clock.png"
+import countdown from "../../assets/img/countdown.png"
+import temperature from "../../assets/img/temperature.png"
+import TextField from '@material-ui/core/TextField';
 
 import Favorite from '@material-ui/icons/Favorite';
 import GridItem from "components/Grid/GridItem.jsx";
@@ -205,55 +209,39 @@ class OvenPage extends React.Component {
                     <GridItem className={classes.container}>
                         <GridContainer justify="center">
                             <GridItem item xs={6} sm={6} md={6}>
-                                <img height={imgSize} width={imgSize} src={oven_img}/>
+                                <GridItem xs={12} sm={12} md={12}><img src={oven_img} style={{width: "100%"}}/></GridItem>
                             </GridItem>
                             <GridItem item xs={6} sm={6} md={6}>
                                 <GridItem item xs={12} sm={12} md={12}>
-                                    <Button justIcon round color="primary"><Favorite
-                                        style={{color: "#FFFFFF"}}/></Button>
-                                    <Button justIcon round color="primary"><Favorite
-                                        style={{color: "#FFFFFF"}}/></Button>
-                                    <Button justIcon round color="primary"><Favorite
-                                        style={{color: "#FFFFFF"}}/></Button>
+                                    <img src={clock} style={{width: "33%"}}/>
+                                    <form style={{width: "60%", height: "100%", float: "right"}} className={classes.container} noValidate>
+                                        <TextField
+                                            id="time"
+                                            label="Alarm clock"
+                                            type="time"
+                                            defaultValue="07:30"
+                                            className={classes.textField}
+                                            InputLabelProps={{
+                                                shrink: true,
+                                            }}
+                                            inputProps={{
+                                                step: 300, // 5 min
+                                            }}
+                                        />
+                                    </form>
+
+                                    {/*<img src={clock} style={{width: "33%"}}/>*/}
                                 </GridItem>
+                                <GridItem item xs={12}  sm={12} md={12}>
+                                    <img src={countdown} style={{width: "33%"}}/>
+                                    <img src={clock} style={{width: "33%"}}/>
+                                    <img src={clock} style={{width: "33%"}}/></GridItem>
                                 <GridItem item xs={12} sm={12} md={12}>
-                                    <Button justIcon round color="primary"><Favorite
-                                        style={{color: "#FFFFFF"}}/></Button>
-                                    <Button justIcon round color="primary"><Favorite
-                                        style={{color: "#FFFFFF"}}/></Button>
-                                    <Button justIcon round color="primary"><Favorite
-                                        style={{color: "#FFFFFF"}}/></Button>
-                                </GridItem>
-                                <GridItem item xs={12} sm={12} md={12}>
-                                    <Button justIcon round color="primary"><Favorite
-                                        style={{color: "#FFFFFF"}}/></Button>
-                                    <Button justIcon round color="primary"><Favorite
-                                        style={{color: "#FFFFFF"}}/></Button>
-                                    <Button justIcon round color="primary"><Favorite
-                                        style={{color: "#FFFFFF"}}/></Button>
+                                    <img src={temperature} style={{width: "33%"}}/>
+                                    <img src={clock} style={{width: "33%"}}/>
+                                    <img src={clock} style={{width: "33%"}}/>
                                 </GridItem>
                             </GridItem>
-                            {/*
-                            <div className={"main"}>
-
-                                <span>
-                                    <div>
-                                        <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                        <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                        <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                    </div>
-                                    <div>
-                                        <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                        <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                        <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                    </div>
-                                    <div>
-                                        <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                        <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                        <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                    </div>
-                                </span>
-                            </div>*/}
 
 
                             {/*GIT CONFLICT BORDER! DO NOT CROSS*/}
