@@ -40,7 +40,7 @@ function MediaControlCard(props) {
                      style={{cursor: "pointer", width: "15vh", height: "15vh"}}
           />
           <CardContent style={{textAlign: "center", display: "grid", verticalAlign: "middle"}} className={classes.content}>
-            <Button variant="contained" color="primary" size="large" href={link} style={{margin: "2vh"}} className={classes.button}>
+            <Button variant="contained" color="primary" size="large" href={link} style={{margin: "2vh", color: "white"}} className={classes.button}>
               {deviceName}
             </Button>
           </CardContent>
