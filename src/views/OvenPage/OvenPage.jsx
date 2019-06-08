@@ -43,28 +43,26 @@ class OvenPage extends React.Component {
                 <div className={classNames(classes.main, classes.mainRaised)}>
                     <div className={classes.container}>
                         <GridContainer justify="center">
-                            <Grid item xs={3}> </Grid>
-                            <Grid item xs={2}>
+                            <Grid item xs={6} sm={6} md={6}>
                                 <img height={imgSize} width={imgSize} src={oven_img} />
                             </Grid>
-                            <Grid item xs={6}>
-                                <Grid item xs={3}>
-                                    <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                    <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                    <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
+                            <Grid item xs={6} sm={6} md={6}>
+                                <Grid item xs={2} sm={2} md={2}>
+                                    <Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button>
+                                    <Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button>
+                                    <Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button>
                                 </Grid>
-                                <Grid item xs={3}>
-                                    <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                    <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                    <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
+                                <Grid item xs={2}  sm={2} md={2}>
+                                    <Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button>
+                                    <Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button>
+                                    <Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button>
                                 </Grid>
-                                <Grid item xs={3}>
-                                    <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                    <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
-                                    <span><Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button></span>
+                                <Grid item xs={2} sm={2} md={2}>
+                                    <Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button>
+                                    <Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button>
+                                    <Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button>
                                 </Grid>
                             </Grid>
-                            <Grid item xs={3}> </Grid>
                             {/*
                             <div className={"main"}>
 
