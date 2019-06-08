@@ -83,7 +83,7 @@ class Header extends React.Component {
             {backAvailable === true ? (
             <IconButton
                 color="inherit"
-                aria-label="open drawer"
+                aria-label="back"
                 onClick={() => window.history.back()}
             >
               <Back />

@@ -32,8 +32,8 @@ class HomePage extends React.Component {
                     {...rest}
                 />
                 <div style={{padding: "2vh"}} className={classNames(classes.main, classes.mainRaised)}>
-                            <MediaControlCard deviceName="Ustaw" image={fridge} link="https://www.google.com" />
-                            <MediaControlCard deviceName="Ustaw" image={kettle} link="https://www.facebook.com"/>
+                            <MediaControlCard deviceName="Ustaw" image={fridge} link="" />
+                            <MediaControlCard deviceName="Ustaw" image={kettle} link=""/>
                 </div>
             </div>
         );
