@@ -53,7 +53,7 @@ class Messages extends React.Component {
                                             </div>
                                             <div className={classes.centeredInColumns}>
                                                 <Button color='gray'>Odrzuć</Button>
-                                                <Button color='secondary'>Zamknij</Button>
+                                                <Button color='secondary'>Zakręć</Button>
                                             </div>
                                         </div>
                                         <div className={classes.communicate}>
@@ -62,8 +62,7 @@ class Messages extends React.Component {
                                                 <span>Pralka przestała działać</span>
                                             </div>
                                             <div className={classes.centeredInColumns}>
-                                                <Button color='gray'>Odrzuć</Button>
-                                                <Button color='secondary'>Zamknij</Button>
+                                                <Button color='secondary'>Ok</Button>
                                             </div>
                                         </div>
                                     </div>
