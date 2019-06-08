@@ -81,7 +81,7 @@ const landingPageStyle = {
     },
     button: {
         width: '100%',
-        height: '150px',
+        height: '12vh',
         borderRadius: '1rem',
     }
 };
