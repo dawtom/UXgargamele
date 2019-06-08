@@ -34,18 +34,19 @@ const styles = theme => ({
 });
 
 function MediaControlCard(props) {
-  const { deviceName, image, classes, theme } = props;
+  const { deviceName, image, link, classes, theme } = props;
 
   return (
       <Card className={classes.card}>
-        <CardMedia
+        <CardMedia onClick={() => window.location = link}
             className={classes.cover}
             image={image}
             title={deviceName}
+            style={{cursor: "pointer"}}
         />
         {/*<div className={classes.details}>*/}
           <CardContent style={{height: 200, width: "800px", textAlign: "center", padding: 80}} className={classes.content}>
-            <Button variant="contained" color="primary" size="large" className={classes.button}>
+            <Button variant="contained" color="primary" size="large" href={link} className={classes.button}>
               {deviceName}
             </Button>
           </CardContent>

@@ -34,8 +34,8 @@ class HomePage extends React.Component {
                 <div className={classNames(classes.main, classes.mainRaised)}>
                     <div className={classes.container}>
                         <GridContainer justify="center">
-                            <MediaControlCard deviceName="Ustaw lodówkę" image={fridge} />
-                            <MediaControlCard deviceName="Ustaw czajnik" image={kettle} />
+                            <MediaControlCard deviceName="Ustaw lodówkę" image={fridge} link="https://www.google.com" />
+                            <MediaControlCard deviceName="Ustaw czajnik" image={kettle} link="https://www.facebook.com"/>
                         </GridContainer>
                     </div>
                 </div>
