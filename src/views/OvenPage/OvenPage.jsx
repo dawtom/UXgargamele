@@ -12,12 +12,11 @@ import Chat from "@material-ui/icons/Chat";
 import Build from "@material-ui/icons/Build";
 import Button from 'components/CustomButtons/Button.jsx';
 import oven_img from "../../assets/img/oven.png"
-import Container from 'react-bootstrap/Container'
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
+
 import Favorite from '@material-ui/icons/Favorite';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import GridItem from "components/Grid/GridItem.jsx";
+
 
 
 const dashboardRoutes = [];
@@ -43,26 +42,26 @@ class OvenPage extends React.Component {
                 <div className={classNames(classes.main, classes.mainRaised)}>
                     <div className={classes.container}>
                         <GridContainer justify="center">
-                            <Grid item xs={6} sm={6} md={6}>
+                            <GridItem item xs={6} sm={6} md={6}>
                                 <img height={imgSize} width={imgSize} src={oven_img} />
-                            </Grid>
-                            <Grid item xs={6} sm={6} md={6}>
-                                <Grid item xs={2} sm={2} md={2}>
+                            </GridItem>
+                            <GridItem item xs={6} sm={6} md={6}>
+                                <GridItem item xs={12} sm={12} md={12}>
                                     <Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button>
                                     <Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button>
                                     <Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button>
-                                </Grid>
-                                <Grid item xs={2}  sm={2} md={2}>
+                                </GridItem>
+                                <GridItem item xs={12}  sm={12} md={12}>
                                     <Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button>
                                     <Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button>
                                     <Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button>
-                                </Grid>
-                                <Grid item xs={2} sm={2} md={2}>
+                                </GridItem>
+                                <GridItem item xs={12} sm={12} md={12}>
                                     <Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button>
                                     <Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button>
                                     <Button justIcon round color="primary"><Favorite style={{color: "#FFFFFF"}}/></Button>
-                                </Grid>
-                            </Grid>
+                                </GridItem>
+                            </GridItem>
                             {/*
                             <div className={"main"}>
 
@@ -88,6 +87,8 @@ class OvenPage extends React.Component {
 
 
                         </GridContainer>
+
+                        {/*GIT CONFLICT BORDER! DO NOT CROSS*/}
                     </div>
                 </div>
             </div>
