@@ -19,7 +19,8 @@ const styles = theme => ({
     flex: '1 0 auto',
   },
   cover: {
-    width: 200,
+    width: "15vh",
+    height: "15vh",
   },
   controls: {
     display: 'flex',
@@ -27,14 +28,10 @@ const styles = theme => ({
     paddingLeft: theme.spacing.unit,
     paddingBottom: theme.spacing.unit,
   },
-  playIcon: {
-    height: 38,
-    width: 38,
-  },
 });
 
 function MediaControlCard(props) {
-  const { deviceName, image, link, classes, theme } = props;
+  const { deviceName, image, link, classes } = props;
 
   return (
       <Card className={classes.card}>
@@ -45,7 +42,7 @@ function MediaControlCard(props) {
             style={{cursor: "pointer"}}
         />
         {/*<div className={classes.details}>*/}
-          <CardContent style={{height: 200, width: "800px", textAlign: "center", padding: 80}} className={classes.content}>
+          <CardContent style={{textAlign: "center"}} className={classes.content}>
             <Button variant="contained" color="primary" size="large" href={link} className={classes.button}>
               {deviceName}
             </Button>
