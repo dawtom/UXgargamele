@@ -24,13 +24,7 @@ const dashboardRoutes = [];
 /**
  * @return {string}
  */
-function OvenElement(props) {
-    console.log("Props oven element: " + props);
-    if (props.value) {
-        return "{props.name}<br/>"
-    }
-    return "";
-}
+
 class OvenPage extends React.Component {
 
 
@@ -77,7 +71,10 @@ class OvenPage extends React.Component {
                 activeTabElement = <div className={classes.labels}><FormControlLabel
                     control={
                         <Switch
-                            value={this.state.grzalkaTylna}
+                            onChange={(e, c) => {
+                                console.log('event:', e, c);
+                                // this.state.grzalkaTylna = c;
+                            }}
                             classes={{
                                 switchBase: classes.switchBase,
                                 checked: classes.switchChecked,
@@ -95,7 +92,7 @@ class OvenPage extends React.Component {
                     <FormControlLabel
                         control={
                             <Switch
-                                value={this.state.grzalkaGorna}
+                                // checked={this.state.grzalkaGorna}
                                 classes={{
                                     switchBase: classes.switchBase,
                                     checked: classes.switchChecked,
@@ -113,7 +110,7 @@ class OvenPage extends React.Component {
                     <FormControlLabel
                         control={
                             <Switch
-                                value={this.state.grzalkaDolna}
+                                // checked={this.state.grzalkaDolna}
                                 classes={{
                                     switchBase: classes.switchBase,
                                     checked: classes.switchChecked,
@@ -131,7 +128,7 @@ class OvenPage extends React.Component {
                     <FormControlLabel
                         control={
                             <Switch
-                                value={this.state.termoobieg}
+                                // checked={this.state.termoobieg}
                                 classes={{
                                     switchBase: classes.switchBase,
                                     checked: classes.switchChecked,
@@ -149,7 +146,7 @@ class OvenPage extends React.Component {
                     <FormControlLabel
                         control={
                             <Switch
-                                value={this.state.wentylator}
+                                // checked={this.state.wentylator}
                                 classes={{
                                     switchBase: classes.switchBase,
                                     checked: classes.switchChecked,
@@ -167,7 +164,7 @@ class OvenPage extends React.Component {
                     <FormControlLabel
                         control={
                             <Switch
-                                value={this.state.duzyGrill}
+                                // checked={this.state.duzyGrill}
                                 classes={{
                                     switchBase: classes.switchBase,
                                     checked: classes.switchChecked,
@@ -185,7 +182,7 @@ class OvenPage extends React.Component {
                     <FormControlLabel
                         control={
                             <Switch
-                                value={this.state.malyGrill}
+                                // checked={this.state.malyGrill}
                                 classes={{
                                     switchBase: classes.switchBase,
                                     checked: classes.switchChecked,
@@ -212,9 +209,7 @@ class OvenPage extends React.Component {
                             Godzina rozpoczęcia{this.state.time_from}<br/>
                             Czas {this.state.bake_time} minut<br/>
                             Temperatura {this.state.temperature}°C<br/>
-                            <OvenElement value={this.state.grzalkaTylna} name="grzalkaTylna"/>
-                            <OvenElement value={this.state.grzalkaTylna} name="grzalkaTylna"/>
-                            <OvenElement value={this.state.grzalkaTylna} name="grzalkaTylna"/>
+                            {/*<OvenElement value={this.state.grzalkaTylna} name="grzalkaTylna"/>*/}
                         </span>
                     </div>
                     <div className={classes.centeredInColumns}>
