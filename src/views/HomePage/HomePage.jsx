@@ -8,7 +8,7 @@ import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import Button from '../../components/CustomButtons/Button'
 import homePageStyle from "assets/jss/material-kit-react/views/homePage.jsx";
-import warning from 'assets/img/warning.svg'
+import Alert from 'components/Card/Alert.jsx'
 
 const dashboardRoutes = [];
 
@@ -16,6 +16,8 @@ class HomePage extends React.Component {
 
     render() {
         const {classes, ...rest} = this.props;
+        const allMessages = <Button href='/messages' style={{paddingLeft: "1rem", paddingRight: "1rem"}}>Wszystkie 3 komunikaty</Button>;
+        const closeTheDoor = <Button color='primary' style={{paddingLeft: "1rem", paddingRight: "1rem"}} >Zamknij je</Button>;
         return (
             <div>
                 <Header
@@ -30,23 +32,10 @@ class HomePage extends React.Component {
                     {...rest}
                 />
                 <div className={classNames(classes.main, classes.mainRaised)}>
-                    <div className={classes.container}>
+                    <div className={classes.container} style={{paddingBottom: "10px"}}>
                         <GridContainer justify="center">
                             <GridItem xs={12} sm={12} md={12}>
-                                <GridItem xs={12} sm={12} md={8}>
-                                    <div className={classes.centeredContainer}>
-                                        <div className={classes.communicate}>
-                                            <div className={classes.centeredContainer}>
-                                                <img src={warning} className={classes.image}/>
-                                                <span>Drzwi frontowe otwarte</span>
-                                            </div>
-                                            <div className={classes.centeredInRow}>
-                                                <Button color='danger' simple href='/messages'>Wszystkie 3 komunikaty</Button>
-                                                <Button color='secondary'>Zamknij</Button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </GridItem>
+                                <Alert message="Drzwi frontowe otwarte" level="warning" button1={allMessages} button2={closeTheDoor} classes={classes}/>
                             </GridItem>
                             <GridItem xs={12} sm={12} md={12}>
                                 <div className={classes.centeredContainer}>

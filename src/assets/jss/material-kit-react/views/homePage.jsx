@@ -1,5 +1,4 @@
 import {container, title} from "assets/jss/material-kit-react.jsx";
-import headerLinksStyle from "../components/headerLinksStyle.jsx";
 import navbarsStyle from '../views/componentsSections/navbarsStyle'
 
 const landingPageStyle = {
@@ -44,13 +43,11 @@ const landingPageStyle = {
     communicate: {
         width: '100%',
         backgroundColor: '#f5f5f5',
-        height: '150px',
         margin: '1rem 0',
         padding: '1rem',
-        borderRadius: '1rem',
+        borderRadius: '0.5rem',
         color: 'black',
         display: 'flex',
-        justifyContent: 'space-between'
     },
     title: {
         ...title,
@@ -74,7 +71,7 @@ const landingPageStyle = {
         marginTop: "100px !important"
     },
     mainRaised: {
-        margin: "-60px 30px 0px",
+        margin: "-60px 15px 0px",
         borderRadius: "6px",
         boxShadow:
             "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)"
