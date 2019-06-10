@@ -17,17 +17,19 @@ class Messages extends React.Component {
 
     render() {
         const {classes, ...rest} = this.props;
+
         return (
             <div>
                 <Header
                     color="primary"
                     routes={dashboardRoutes}
-                    brand="UXgargamele"
+                    brand="Komunikaty"
                     fixed
                     changeColorOnScroll={{
                         height: 400,
                         color: "white"
                     }}
+                    backAvailable={true}
                     {...rest}
                 />
                 <div className={classNames(classes.main, classes.mainRaised)}>
@@ -35,35 +37,34 @@ class Messages extends React.Component {
                         <GridContainer justify="center">
                             <GridItem xs={12} sm={12} md={12}>
                                 <GridItem xs={12} sm={12} md={8}>
-                                    <div className={classes.centeredContainer}>
-                                        <div className={classes.communicate}>
+                                    <div className={classes.centeredContainer} style={{paddingTop: 10, paddingBottom: 10}}>
+                                        <div id="alert1" className={classes.communicate}>
                                             <div className={classes.centeredContainer}>
-                                                <img src={warning} className={classes.image}/>
+                                                <img src={warning} alt="Ostrzeżenie" className={classes.image}/>
                                                 <span>Drzwi frontowe otwarte</span>
                                             </div>
                                             <div className={classes.centeredInColumns}>
-                                                <Button color='gray'>Odrzuć</Button>
-                                                <Button color='secondary'>Zamknij</Button>
+                                                <Button color='gray' onClick={() =>document.getElementById("alert1").style.display = "None"}>Odrzuć</Button>
+                                                <Button color='secondary' onClick={() =>document.getElementById("alert1").style.display = "None"}>Zamknij je</Button>
                                             </div>
                                         </div>
-                                        <div className={classes.communicate}>
+                                        <div  id="alert2" className={classes.communicate}>
                                             <div className={classes.centeredContainer}>
-                                                <img src={warning} className={classes.image}/>
-                                                <span>Ciepła woda jest wykorzystywan w łazience od 30 minut</span>
+                                                <img src={warning} alt="Ostrzeżenie" className={classes.image}/>
+                                                <span>Woda w łazience jest odkręcona od 30 minut</span>
                                             </div>
                                             <div className={classes.centeredInColumns}>
-                                                <Button color='gray'>Odrzuć</Button>
-                                                <Button color='secondary'>Zamknij</Button>
+                                                <Button color='gray' onClick={() =>document.getElementById("alert2").style.display = "None"}>Odrzuć</Button>
+                                                <Button color='secondary' onClick={() =>document.getElementById("alert2").style.display = "None"}>Zakręć</Button>
                                             </div>
                                         </div>
-                                        <div className={classes.communicate}>
+                                        <div  id="alert3" className={classes.communicate}>
                                             <div className={classes.centeredContainer}>
-                                                <img src={info} className={classes.image}/>
-                                                <span>Pralka przestała działać</span>
+                                                <img src={info} alt="Informacja" className={classes.image}/>
+                                                <span>Pralka przestała pracować</span>
                                             </div>
                                             <div className={classes.centeredInColumns}>
-                                                <Button color='gray'>Odrzuć</Button>
-                                                <Button color='secondary'>Zamknij</Button>
+                                                <Button color='secondary' onClick={() =>document.getElementById("alert3").style.display = "None"}>Ok</Button>
                                             </div>
                                         </div>
                                     </div>

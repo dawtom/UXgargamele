@@ -49,7 +49,7 @@ class LoginPage extends React.Component {
                 <Header
                     absolute
                     color="transparent"
-                    brand="UXgargamele"
+                    brand="Smart Home"
                 />
                 <div
                     className={classes.pageHeader}

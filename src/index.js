@@ -9,6 +9,7 @@ import "assets/scss/material-kit-react.scss?v=1.4.0";
 import LoginPage from "views/LoginPage/LoginPage.jsx";
 import HomePage from "views/HomePage/HomePage.jsx";
 import Message from "views/Messages/Messages.jsx";
+import Category from "views/Category/Category.jsx";
 import OvenPage from "views/OvenPage/OvenPage.jsx";
 
 var hist = createBrowserHistory();
@@ -18,6 +19,7 @@ ReactDOM.render(
     <Switch>
       <Route path="/home" component={HomePage} />
       <Route path="/messages" component={Message} />
+      <Route path="/kitchen" component={Category} />
       <Route path="/oven" component={OvenPage} />
       <Route path="/" component={LoginPage} />
     </Switch>
