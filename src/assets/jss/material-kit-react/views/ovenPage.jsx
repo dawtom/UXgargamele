@@ -59,7 +59,6 @@ const landingPageStyle = {
     communicate: {
         width: '100%',
         backgroundColor: '#f5f5f5',
-        height: '150px',
         margin: '1rem 0',
         padding: '1rem',
         borderRadius: '1rem',

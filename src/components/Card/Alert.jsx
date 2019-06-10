@@ -5,11 +5,12 @@ import info from 'assets/img/info.svg'
 
 
 function Alert(props) {
-  const { message, level, button1, button2, classes } = props;
+  const { message, level, button1, button2, overrideGrid, classes } = props;
   const image = level === "warning" ? warning : info;
+  const md = overrideGrid !== true ? 8 : 12;
 
   return (
-      <GridItem xs={12} sm={12} md={8} >
+      <GridItem xs={12} sm={12} md={md} >
         <div className={classes.communicate}>
           <GridItem xs={2} sm={2} md={2} style={{paddingLeft: 0, paddingRight: 0}}>
             <img src={image} alt="Severity" />

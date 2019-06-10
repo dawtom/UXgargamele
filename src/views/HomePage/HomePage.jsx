@@ -16,7 +16,7 @@ class HomePage extends React.Component {
 
     render() {
         const {classes, ...rest} = this.props;
-        const allMessages = <Button href='/messages' style={{paddingLeft: "1rem", paddingRight: "1rem"}}>Wszystkie 3 komunikaty</Button>;
+        const allMessages = <Button href='/messages' style={{paddingLeft: "1rem", paddingRight: "1rem"}}>Wszystkie&nbsp;3 komunikaty</Button>;
         const closeTheDoor = <Button color='primary' style={{paddingLeft: "1rem", paddingRight: "1rem"}} >Zamknij je</Button>;
         return (
             <div>
@@ -35,7 +35,7 @@ class HomePage extends React.Component {
                     <div className={classes.container} style={{paddingBottom: "10px"}}>
                         <GridContainer justify="center">
                             <GridItem xs={12} sm={12} md={12}>
-                                <Alert message="Drzwi frontowe otwarte" level="warning" button1={allMessages} button2={closeTheDoor} classes={classes}/>
+                                <Alert message="Drzwi frontowe są&nbsp;teraz otwarte" level="warning" button1={allMessages} button2={closeTheDoor} classes={classes}/>
                             </GridItem>
                             <GridItem xs={12} sm={12} md={12}>
                                 <div className={classes.centeredContainer}>

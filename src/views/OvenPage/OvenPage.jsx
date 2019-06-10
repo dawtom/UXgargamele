@@ -18,6 +18,7 @@ import timer from 'assets/img/timer.svg'
 import thermometer from 'assets/img/thermometer.svg'
 import clock from 'assets/img/time.svg'
 import TextField from '@material-ui/core/TextField';
+import Alert from 'components/Card/Alert.jsx'
 
 const dashboardRoutes = [];
 
@@ -63,6 +64,8 @@ class OvenPage extends React.Component {
     render() {
         const {classes, ...rest} = this.props;
         const {activeTab} = this.state;
+
+        const cancelButton = <Button onClick={this.cancelOven} style={{paddingLeft: "10px", paddingRight: "10px", marginLeft: "5px"}}>Anuluj</Button>;
 
         let activeTabElement;
         switch (activeTab) {
@@ -201,31 +204,14 @@ class OvenPage extends React.Component {
                 activeTabElement = <div></div>
                 break;
             case 'oven':
-                activeTabElement = <div  className={classes.communicate}>
-                    <div className={classes.centeredContainer}>
-                        <img src={info} className={classes.image}/>
-                        <span>Piekarnik ustawiony: <br/>
-                            Godzina rozpoczęcia{this.state.time_from}<br/>
-                            Czas {this.state.bake_time} minut<br/>
-                            Temperatura {this.state.temperature}°C<br/>
-                            {/*<OvenElement value={this.state.grzalkaTylna} name="grzalkaTylna"/>*/}
-                        </span>
-                    </div>
-                    <div className={classes.centeredInColumns}>
-                        <Button onClick={this.cancelOven} color='danger' simple>Anuluj</Button>
-                    </div>
-                </div>;
+                activeTabElement = <Alert message={<span>Piekarnik ustawiony: <br/>
+                                    Godzina rozpoczęcia {this.state.time_from}<br/>
+                                    Czas {this.state.bake_time} minut<br/>
+                                    Temperatura {this.state.temperature}°C
+                </span>} level="info" button2={cancelButton} overrideGrid={true} classes={classes} />;
                 break;
                 case 'cancelled':
-                activeTabElement = <div  className={classes.communicate}>
-                    <div className={classes.centeredContainer}>
-                        <img src={info} className={classes.image}/>
-                        <span>Anulowano ustawienie piekarnika</span>
-                    </div>
-                    <div className={classes.centeredInColumns}>
-                        <Button onClick={this.cancelOven} color='danger' simple>Anuluj</Button>
-                    </div>
-                </div>;
+                activeTabElement =  <Alert message={<span>Anulowano ustawienie piekarnika</span>} level="info" overrideGrid={true} classes={classes}/>;
                 break;
             default:
                 activeTabElement = null
@@ -237,7 +223,7 @@ class OvenPage extends React.Component {
                 <Header
                     color="primary"
                     routes={dashboardRoutes}
-                    brand="UXgargamele"
+                    brand="Piekarnik"
                     fixed
                     changeColorOnScroll={{
                         height: 400,
@@ -292,7 +278,7 @@ class OvenPage extends React.Component {
                                 <GridItem item xs={12} sm={12} md={12} className={classes.buttons}>
                                     <Button color='primary' simple onClick={this.setAdvancedTab}>Zaawansowane</Button>
                                     <Button color='primary' simple onClick={this.setDefaultTab}>Domyślne</Button>
-                                    <Button color='secondary' onClick={this.setOvenTab}>Ustaw</Button>
+                                    <Button color='primary' onClick={this.setOvenTab}>Ustaw</Button>
                                 </GridItem>
                                 <GridItem item xs={12} sm={12} md={6}>
                                     <div className={classes.labels}>
