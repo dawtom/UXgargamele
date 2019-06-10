@@ -9,6 +9,7 @@ import homePageStyle from "assets/jss/material-kit-react/views/homePage.jsx";
 import MediaControlCard from "components/Card/MediaControlCard.jsx"
 import fridge from "../../assets/img/fridge.png";
 import kettle from "../../assets/img/kettle.png";
+import oven_img from "../../assets/img/oven.png"
 
 const dashboardRoutes = [];
 
@@ -34,6 +35,7 @@ class HomePage extends React.Component {
                 <div style={{padding: "2vh"}} className={classNames(classes.main, classes.mainRaised)}>
                             <MediaControlCard deviceName="Ustaw" image={fridge} link="" />
                             <MediaControlCard deviceName="Ustaw" image={kettle} link=""/>
+                            <MediaControlCard deviceName="Ustaw" image={oven_img} link="/oven"/>
                 </div>
             </div>
         );
