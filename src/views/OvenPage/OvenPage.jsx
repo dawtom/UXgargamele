@@ -33,7 +33,6 @@ class OvenPage extends React.Component {
         temperature: 200,
         time_from: "15:00",
         bake_time: "00:00",
-        ovenRunningDisplay: 'flex',
         grzalkaTylna: false,
         grzalkaGorna: false,
         grzalkaDolna: false,
@@ -52,11 +51,11 @@ class OvenPage extends React.Component {
     };
 
     setOvenTab = () => {
-        this.setState({activeTab: 'oven', ovenRunningDisplay: 'flex'})
+        this.setState({activeTab: 'oven'})
     };
 
     cancelOven = () => {
-        this.setState({ovenRunningDisplay: 'none'})
+        this.setState({activeTab: 'cancelled'})
     };
 
 
@@ -202,7 +201,7 @@ class OvenPage extends React.Component {
                 activeTabElement = <div></div>
                 break;
             case 'oven':
-                activeTabElement = <div  className={classes.communicate} style={{display: this.state.ovenRunningDisplay}}>
+                activeTabElement = <div  className={classes.communicate}>
                     <div className={classes.centeredContainer}>
                         <img src={info} className={classes.image}/>
                         <span>Piekarnik ustawiony: <br/>
@@ -211,6 +210,17 @@ class OvenPage extends React.Component {
                             Temperatura {this.state.temperature}°C<br/>
                             {/*<OvenElement value={this.state.grzalkaTylna} name="grzalkaTylna"/>*/}
                         </span>
+                    </div>
+                    <div className={classes.centeredInColumns}>
+                        <Button onClick={this.cancelOven} color='danger' simple>Anuluj</Button>
+                    </div>
+                </div>;
+                break;
+                case 'cancelled':
+                activeTabElement = <div  className={classes.communicate}>
+                    <div className={classes.centeredContainer}>
+                        <img src={info} className={classes.image}/>
+                        <span>Anulowano ustawienie piekarnika</span>
                     </div>
                     <div className={classes.centeredInColumns}>
                         <Button onClick={this.cancelOven} color='danger' simple>Anuluj</Button>
@@ -233,6 +243,7 @@ class OvenPage extends React.Component {
                         height: 400,
                         color: "white"
                     }}
+                    backAvailable={true}
                     {...rest}
                 />
                 <div className={classNames(classes.main, classes.mainRaised)}>
