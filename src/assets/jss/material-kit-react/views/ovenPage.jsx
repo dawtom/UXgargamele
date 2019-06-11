@@ -11,30 +11,46 @@ const landingPageStyle = {
         },
         ...container,
     },
+    labels: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        padding: '10px 0',
+        justifyContent: 'left',
+        "& label": {
+            display: 'flex',
+            flexDirection: 'column',
+            marginRight: '30px',
+            marginBottom: '20px'
+        }
+    },
+    option: {
+      padding: '1rem',
+        '& img': {
+          marginRight: '10px'
+        }
+    },
+    buttons: {
+        "& button:first-of-type": {
+            paddingLeft: 0,
+            paddingRight: 0
+        }
+    },
+    switchChecked: {
+        color: '#FFC61B !important',
+        "& + $switchBar": {
+            backgroundColor: "#FFC61B !important"
+        },
+    },
+    switchIconChecked: {
+        borderColor: "#FFC61B",
+        transform: "translateX(0px)!important"
+    },
     centeredContainer: {
         display: 'flex',
         flexWrap: 'wrap',
         alignItems: 'center',
-    },
-    centeredInRow: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        flexDirection: 'row',
-        alignItems: 'center',
-        "& a": {
-            whiteSpace: 'pre-wrap !important'
-        },
-    },
-    centeredInColumns: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
         flexDirection: 'column',
-        alignItems: 'center',
-        "& a": {
-            whiteSpace: 'pre-wrap !important'
-        },
+        justifyContent: 'center',
     },
     image: {
         height: '60%',
@@ -45,9 +61,20 @@ const landingPageStyle = {
         backgroundColor: '#f5f5f5',
         margin: '1rem 0',
         padding: '1rem',
-        borderRadius: '0.5rem',
+        borderRadius: '1rem',
         color: 'black',
         display: 'flex',
+        justifyContent: 'space-between'
+    },
+    centeredInColumns: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        alignItems: 'center',
+        "& a": {
+            whiteSpace: 'pre-wrap !important'
+        },
     },
     title: {
         ...title,
@@ -71,14 +98,14 @@ const landingPageStyle = {
         marginTop: "100px !important"
     },
     mainRaised: {
-        margin: "-60px 15px 0px",
+        margin: "-60px 30px 0px",
         borderRadius: "6px",
         boxShadow:
             "0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)"
     },
     button: {
         width: '100%',
-        height: '12vh',
+        height: '150px',
         borderRadius: '1rem',
     }
 };

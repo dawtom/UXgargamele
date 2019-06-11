@@ -5,10 +5,13 @@ import classNames from "classnames";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Header from "components/Header/Header.jsx";
 import homePageStyle from "assets/jss/material-kit-react/views/homePage.jsx";
+import GridContainer from "components/Grid/GridContainer";
+import GridItem from "components/Grid/GridItem";
 
 import MediaControlCard from "components/Card/MediaControlCard.jsx"
 import fridge from "../../assets/img/fridge.png";
 import kettle from "../../assets/img/kettle.png";
+import oven_img from "../../assets/img/oven.png"
 
 const dashboardRoutes = [];
 
@@ -32,8 +35,15 @@ class HomePage extends React.Component {
                     {...rest}
                 />
                 <div style={{padding: "2vh"}} className={classNames(classes.main, classes.mainRaised)}>
-                            <MediaControlCard deviceName="Ustaw" image={fridge} link="" />
-                            <MediaControlCard deviceName="Ustaw" image={kettle} link=""/>
+                    <div className={classes.container} style={{paddingLeft: 0, paddingRight: 0}}>
+                        <GridContainer>
+                            <GridItem xs={12} sm={12} md={12}>
+                                <MediaControlCard deviceName="Ustaw" image={oven_img} link="/oven"/>
+                                <MediaControlCard deviceName="Ustaw" image={fridge} link="" />
+                                <MediaControlCard deviceName="Ustaw" image={kettle} link=""/>
+                            </GridItem>
+                        </GridContainer>
+                    </div>
                 </div>
             </div>
         );
