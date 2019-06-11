@@ -65,16 +65,6 @@ class LoginPage extends React.Component {
                                     <form className={classes.form}>
                                         <CardHeader color="primary" className={classes.cardHeader}>
                                             <h4>Login</h4>
-                                            <div className={classes.socialLine}>
-                                                <Button
-                                                    justIcon
-                                                    target="_blank"
-                                                    color="transparent"
-                                                    onClick={e => e.preventDefault()}
-                                                >
-                                                    <i className={"fab fa-google-plus-g"}/>
-                                                </Button>
-                                            </div>
                                         </CardHeader>
                                         <CardBody>
                                             <CustomInput
@@ -128,7 +118,7 @@ class LoginPage extends React.Component {
                                         <CardFooter className={classes.cardFooter}>
                                             <Link to={`${process.env.PUBLIC_URL}/home`}>
                                                 <Button simple color="primary" size="lg">
-                                                    Sign in
+                                                    Zaloguj się
                                                 </Button>
                                             </Link>
                                         </CardFooter>
