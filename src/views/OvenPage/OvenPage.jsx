@@ -33,8 +33,8 @@ class OvenPage extends React.Component {
         time_from: "15:00",
         bake_time: "00:00",
         grzalkaTylna: false,
-        grzalkaGorna: false,
-        grzalkaDolna: false,
+        grzalkaGorna: true,
+        grzalkaDolna: true,
         termoobieg: false,
         wentylator: false,
         duzyGrill: false,
@@ -45,8 +45,17 @@ class OvenPage extends React.Component {
         this.setState({activeTab: 'advanced'})
     };
 
-    setDefaultTab = () => {
-        this.setState({activeTab: 'default'})
+    setDefaultSettings = () => {
+        this.setState({temperature: 200,
+                            time_from: "15:00",
+                            bake_time: "00:00",
+                            grzalkaTylna: false,
+                            grzalkaGorna: true,
+                            grzalkaDolna: true,
+                            termoobieg: false,
+                            wentylator: false,
+                            duzyGrill: false,
+                            malyGrill: false})
     };
 
     setOvenTab = () => {
@@ -57,6 +66,47 @@ class OvenPage extends React.Component {
         this.setState({activeTab: 'cancelled'})
     };
 
+    handleTimeFromChange(e) {
+        this.setState({ time_from: e.target.value });
+    }
+
+    handleBakeTimeChange(e) {
+        this.setState({ bake_time: e.target.value });
+    }
+
+    handleTemperatureChange(e) {
+        this.setState({ temperature: e.target.value });
+    }
+
+    handleGrzalkaTylnaChange(e) {
+        this.setState({ grzalkaTylna: e.target.checked });
+    }
+
+    handleGrzalkaGornaChange(e) {
+        this.setState({ grzalkaGorna: e.target.checked });
+    }
+
+    handleGrzalkaDolnaChange(e) {
+        this.setState({ grzalkaDolna: e.target.checked });
+    }
+
+    handleTermoobiegChange(e) {
+        this.setState({ termoobieg: e.target.checked });
+    }
+
+    handleWentylatorChange(e) {
+        this.setState({ wentylator: e.target.checked });
+    }
+
+    handleDuzyGrillChange(e) {
+        this.setState({ duzyGrill: e.target.checked });
+    }
+
+    handleMalyGrillChange(e) {
+        this.setState({ malyGrill: e.target.checked });
+    }
+
+
 
 
     render() {
@@ -65,19 +115,19 @@ class OvenPage extends React.Component {
 
         const cancelButton = <Button onClick={this.cancelOven} style={{paddingLeft: "10px", paddingRight: "10px", marginLeft: "5px"}}>Anuluj</Button>;
 
-        const advancedButton = activeTab !=='advanced' ? <Button color='primary' simple onClick={this.setAdvancedTab}>Zaawansowane</Button> : <Button color='primary' simple disabled={true}>Zaawansowane</Button>;
+        const advancedButton = activeTab !=='advanced' && activeTab !== 'oven' ? <Button color='primary' simple onClick={this.setAdvancedTab}>Zaawansowane</Button> : <Button color='primary' simple disabled={true}>Zaawansowane</Button>;
+        const defaultButton = activeTab !== 'oven' ? <Button color='primary' simple onClick={this.setDefaultSettings}>Domyślne</Button> : <Button color='primary' simple disabled={true}>Domyślne</Button>;
         const setButton = activeTab !== 'oven' ? <Button color='primary' onClick={this.setOvenTab}>Ustaw</Button> : <Button color='primary' disabled={true}>Ustaw</Button>;
 
         let activeTabElement;
         switch (activeTab) {
             case 'advanced':
-                activeTabElement = <div className={classes.labels}><FormControlLabel
+                activeTabElement = <div className={classes.labels}>
+                    <FormControlLabel
                     control={
                         <Switch
-                            onChange={(e, c) => {
-                                console.log('event:', e, c);
-                                // this.state.grzalkaTylna = c;
-                            }}
+                            checked={this.state.grzalkaTylna}
+                            onChange={this.handleGrzalkaTylnaChange.bind(this)}
                             classes={{
                                 switchBase: classes.switchBase,
                                 checked: classes.switchChecked,
@@ -95,7 +145,8 @@ class OvenPage extends React.Component {
                     <FormControlLabel
                         control={
                             <Switch
-                                // checked={this.state.grzalkaGorna}
+                                checked={this.state.grzalkaGorna}
+                                onChange={this.handleGrzalkaGornaChange.bind(this)}
                                 classes={{
                                     switchBase: classes.switchBase,
                                     checked: classes.switchChecked,
@@ -113,7 +164,8 @@ class OvenPage extends React.Component {
                     <FormControlLabel
                         control={
                             <Switch
-                                // checked={this.state.grzalkaDolna}
+                                checked={this.state.grzalkaDolna}
+                                onChange={this.handleGrzalkaDolnaChange.bind(this)}
                                 classes={{
                                     switchBase: classes.switchBase,
                                     checked: classes.switchChecked,
@@ -131,7 +183,8 @@ class OvenPage extends React.Component {
                     <FormControlLabel
                         control={
                             <Switch
-                                // checked={this.state.termoobieg}
+                                checked={this.state.termoobieg}
+                                onChange={this.handleTermoobiegChange.bind(this)}
                                 classes={{
                                     switchBase: classes.switchBase,
                                     checked: classes.switchChecked,
@@ -149,7 +202,8 @@ class OvenPage extends React.Component {
                     <FormControlLabel
                         control={
                             <Switch
-                                // checked={this.state.wentylator}
+                                checked={this.state.wentylator}
+                                onChange={this.handleWentylatorChange.bind(this)}
                                 classes={{
                                     switchBase: classes.switchBase,
                                     checked: classes.switchChecked,
@@ -167,7 +221,8 @@ class OvenPage extends React.Component {
                     <FormControlLabel
                         control={
                             <Switch
-                                // checked={this.state.duzyGrill}
+                                checked={this.state.duzyGrill}
+                                onChange={this.handleDuzyGrillChange.bind(this)}
                                 classes={{
                                     switchBase: classes.switchBase,
                                     checked: classes.switchChecked,
@@ -185,7 +240,8 @@ class OvenPage extends React.Component {
                     <FormControlLabel
                         control={
                             <Switch
-                                // checked={this.state.malyGrill}
+                                checked={this.state.malyGrill}
+                                onChange={this.handleMalyGrillChange.bind(this)}
                                 classes={{
                                     switchBase: classes.switchBase,
                                     checked: classes.switchChecked,
@@ -199,7 +255,8 @@ class OvenPage extends React.Component {
                             label: classes.label
                         }}
                         label="Mały grill"
-                    /></div>;
+                    />
+                </div>;
                 break;
             case 'default':
                 activeTabElement = <div></div>;
@@ -248,7 +305,7 @@ class OvenPage extends React.Component {
                                 <div>
                                     <div className={classes.option}>
                                         <img src={clock} alt="time"/>
-                                        <TextField type='time' value={this.state.time_from} InputLabelProps={{
+                                        <TextField type='time' value={this.state.time_from} onChange={ this.handleTimeFromChange.bind(this) }  InputLabelProps={{
                                             shrink: true,
                                         }}
                                                    inputProps={{
@@ -257,20 +314,20 @@ class OvenPage extends React.Component {
                                     </div>
                                     <div className={classes.option}>
                                         <img src={timer} alt="length"/>
-                                        <TextField value={this.state.bake_time} type='time' InputLabelProps={{
+                                        <TextField value={this.state.bake_time} onChange={ this.handleBakeTimeChange.bind(this) } type='time' InputLabelProps={{
                                             shrink: true,
                                         }}
                                                    inputProps={{
-                                                       step: 300, // 5 min
+                                                       step: 60, // 1 min
                                                    }}/>
                                     </div>
                                     <div className={classes.option}>
                                         <img src={thermometer} alt="temperature"/>
-                                        <TextField type='number' placeholder='temperatura [°C]' value={this.state.temperature} InputLabelProps={{
+                                        <TextField type='number' placeholder='temperatura [°C]' value={this.state.temperature} onChange={ this.handleTemperatureChange.bind(this) } InputLabelProps={{
                                             shrink: true,
                                         }}
                                                    inputProps={{
-                                                       step: 300, // 5 min
+                                                       step: 1,
                                                    }}/>
                                     </div>
                                 </div>
@@ -278,7 +335,7 @@ class OvenPage extends React.Component {
                             <GridItem item xs={12} sm={12} md={12} style={{marginTop: '50px'}}>
                                 <GridItem item xs={12} sm={12} md={12} className={classes.buttons}>
                                     {advancedButton}
-                                    <Button color='primary' simple onClick={this.setDefaultTab}>Domyślne</Button>
+                                    {defaultButton}
                                     {setButton}
                                 </GridItem>
                                 <GridItem item xs={12} sm={12} md={6}>
