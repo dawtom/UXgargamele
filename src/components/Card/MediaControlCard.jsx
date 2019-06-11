@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
+import GridItem from "../Grid/GridItem";
 
 const styles = theme => ({
   card: {
@@ -34,16 +35,20 @@ function MediaControlCard(props) {
 
   return (
       <Card style={{display: "flex"}} className={classes.card}>
+          <GridItem xs={4} sm={4} md={3}>
           <img onClick={() => window.location = link}
                      src={image}
                      alt={deviceName}
                      style={{cursor: "pointer", width: "15vh", height: "15vh"}}
           />
+          </GridItem>
+          <GridItem xs={8} sm={8} md={4}>
           <CardContent style={{textAlign: "center", display: "grid", verticalAlign: "middle"}} className={classes.content}>
-            <Button variant="contained" color="primary" size="large" href={link} style={{margin: "2vh", color: "white"}} className={classes.button}>
-              {deviceName}
+            <Button variant="contained" color="primary" size="large" href={link} style={{margin: "2vh", color: "white", textAlign: "center", paddingLeft: 0, paddingRight: 0}} className={classes.button} fullWidth={true}>
+              <span style={{width: "100%"}}>{deviceName}</span>
             </Button>
           </CardContent>
+          </GridItem>
       </Card>
   );
 }
