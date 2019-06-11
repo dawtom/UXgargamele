@@ -9,11 +9,9 @@ import ovenPageStyle from "assets/jss/material-kit-react/views/ovenPage.jsx";
 import Button from 'components/CustomButtons/Button.jsx';
 import oven_img from "../../assets/img/oven.png"
 
-import Favorite from '@material-ui/icons/Favorite';
 import GridItem from "components/Grid/GridItem.jsx";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
-import info from 'assets/img/info.svg'
 import timer from 'assets/img/timer.svg'
 import thermometer from 'assets/img/thermometer.svg'
 import clock from 'assets/img/time.svg'
@@ -66,6 +64,9 @@ class OvenPage extends React.Component {
         const {activeTab} = this.state;
 
         const cancelButton = <Button onClick={this.cancelOven} style={{paddingLeft: "10px", paddingRight: "10px", marginLeft: "5px"}}>Anuluj</Button>;
+
+        const advancedButton = activeTab !=='advanced' ? <Button color='primary' simple onClick={this.setAdvancedTab}>Zaawansowane</Button> : <Button color='primary' simple disabled={true}>Zaawansowane</Button>;
+        const setButton = activeTab !== 'oven' ? <Button color='primary' onClick={this.setOvenTab}>Ustaw</Button> : <Button color='primary' disabled={true}>Ustaw</Button>;
 
         let activeTabElement;
         switch (activeTab) {
@@ -201,7 +202,7 @@ class OvenPage extends React.Component {
                     /></div>;
                 break;
             case 'default':
-                activeTabElement = <div></div>
+                activeTabElement = <div></div>;
                 break;
             case 'oven':
                 activeTabElement = <Alert message={<span>Piekarnik ustawiony: <br/>
@@ -242,11 +243,11 @@ class OvenPage extends React.Component {
                                 justifyContent: 'space-between'
                             }}>
                                 <div>
-                                    <img height={imgSize} width={imgSize} src={oven_img}/>
+                                    <img height={imgSize} width={imgSize} src={oven_img} alt="Oven"/>
                                 </div>
                                 <div>
                                     <div className={classes.option}>
-                                        <img src={clock}/>
+                                        <img src={clock} alt="time"/>
                                         <TextField type='time' value={this.state.time_from} InputLabelProps={{
                                             shrink: true,
                                         }}
@@ -255,7 +256,7 @@ class OvenPage extends React.Component {
                                                    }}/>
                                     </div>
                                     <div className={classes.option}>
-                                        <img src={timer}/>
+                                        <img src={timer} alt="length"/>
                                         <TextField value={this.state.bake_time} type='time' InputLabelProps={{
                                             shrink: true,
                                         }}
@@ -264,7 +265,7 @@ class OvenPage extends React.Component {
                                                    }}/>
                                     </div>
                                     <div className={classes.option}>
-                                        <img src={thermometer}/>
+                                        <img src={thermometer} alt="temperature"/>
                                         <TextField type='number' placeholder='temperatura [°C]' value={this.state.temperature} InputLabelProps={{
                                             shrink: true,
                                         }}
@@ -276,9 +277,9 @@ class OvenPage extends React.Component {
                             </GridItem>
                             <GridItem item xs={12} sm={12} md={12} style={{marginTop: '50px'}}>
                                 <GridItem item xs={12} sm={12} md={12} className={classes.buttons}>
-                                    <Button color='primary' simple onClick={this.setAdvancedTab}>Zaawansowane</Button>
+                                    {advancedButton}
                                     <Button color='primary' simple onClick={this.setDefaultTab}>Domyślne</Button>
-                                    <Button color='primary' onClick={this.setOvenTab}>Ustaw</Button>
+                                    {setButton}
                                 </GridItem>
                                 <GridItem item xs={12} sm={12} md={6}>
                                     <div className={classes.labels}>
@@ -290,8 +291,7 @@ class OvenPage extends React.Component {
                     </div>
                 </div>
             </div>
-        )
-            ;
+        );
     }
 }
 

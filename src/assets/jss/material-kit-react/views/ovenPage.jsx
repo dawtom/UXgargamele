@@ -15,7 +15,7 @@ const landingPageStyle = {
         display: 'flex',
         flexWrap: 'wrap',
         padding: '10px 0',
-        justifyContent: 'center',
+        justifyContent: 'left',
         "& label": {
             display: 'flex',
             flexDirection: 'column',

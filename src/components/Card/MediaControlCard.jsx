@@ -39,7 +39,7 @@ function MediaControlCard(props) {
           <img onClick={() => window.location = link}
                      src={image}
                      alt={deviceName}
-                     style={{cursor: "pointer", width: "15vh", height: "15vh"}}
+                     style={{cursor: "pointer", width: "15vh", height: "15vh", margin: "5px"}}
           />
           </GridItem>
           <GridItem xs={8} sm={8} md={4}>
