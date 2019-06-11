@@ -8,8 +8,6 @@ import Email from "@material-ui/icons/Email";
 import People from "@material-ui/icons/People";
 // core components
 import Header from "components/Header/Header.jsx";
-import HeaderLinks from "components/Header/HeaderLinks.jsx";
-import Footer from "components/Footer/Footer.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import Button from "components/CustomButtons/Button.jsx";
@@ -18,6 +16,7 @@ import CardBody from "components/Card/CardBody.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
 import CustomInput from "components/CustomInput/CustomInput.jsx";
+import { Link } from "react-router-dom";
 
 import loginPageStyle from "assets/jss/material-kit-react/views/loginPage.jsx";
 
@@ -69,7 +68,6 @@ class LoginPage extends React.Component {
                                             <div className={classes.socialLine}>
                                                 <Button
                                                     justIcon
-                                                    href="#pablo"
                                                     target="_blank"
                                                     color="transparent"
                                                     onClick={e => e.preventDefault()}
@@ -128,11 +126,11 @@ class LoginPage extends React.Component {
                                             />
                                         </CardBody>
                                         <CardFooter className={classes.cardFooter}>
-                                            <Button simple color="primary" size="lg"
-                                                    href="/home"
-                                                    >
-                                                Sign in
-                                            </Button>
+                                            <Link to={`${process.env.PUBLIC_URL}/home`}>
+                                                <Button simple color="primary" size="lg">
+                                                    Sign in
+                                                </Button>
+                                            </Link>
                                         </CardFooter>
                                     </form>
                                 </Card>

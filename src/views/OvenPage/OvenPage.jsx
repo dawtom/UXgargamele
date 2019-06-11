@@ -264,7 +264,7 @@ class OvenPage extends React.Component {
             case 'oven':
                 activeTabElement = <Alert message={<span>Piekarnik ustawiony: <br/>
                                     Godzina rozpoczęcia {this.state.time_from}<br/>
-                                    Czas {this.state.bake_time} minut<br/>
+                                    Czas {this.state.bake_time}h<br/>
                                     Temperatura {this.state.temperature}°C
                 </span>} level="info" button2={cancelButton} overrideGrid={true} classes={classes} />;
                 break;

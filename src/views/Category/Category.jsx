@@ -38,9 +38,9 @@ class HomePage extends React.Component {
                     <div className={classes.container} style={{paddingLeft: 0, paddingRight: 0}}>
                         <GridContainer>
                             <GridItem xs={12} sm={12} md={12}>
-                                <MediaControlCard deviceName="Ustaw" image={oven_img} link="/oven"/>
-                                <MediaControlCard deviceName="Ustaw" image={fridge} link="" />
-                                <MediaControlCard deviceName="Ustaw" image={kettle} link=""/>
+                                <MediaControlCard deviceName="Ustaw" image={oven_img} link={`${process.env.PUBLIC_URL}/oven`}/>
+                                <MediaControlCard deviceName="Ustaw" image={fridge} link={"#"} />
+                                <MediaControlCard deviceName="Ustaw" image={kettle} link={"#"} />
                             </GridItem>
                         </GridContainer>
                     </div>

@@ -6,6 +6,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import Header from "components/Header/Header.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
+import { Link } from "react-router-dom";
 import Button from '../../components/CustomButtons/Button'
 import homePageStyle from "assets/jss/material-kit-react/views/homePage.jsx";
 import Alert from 'components/Card/Alert.jsx'
@@ -16,7 +17,7 @@ class HomePage extends React.Component {
 
     render() {
         const {classes, ...rest} = this.props;
-        const allMessages = <Button href='/messages' style={{paddingLeft: "1rem", paddingRight: "1rem"}}>Wszystkie&nbsp;3 komunikaty</Button>;
+        const allMessages = <Link to={`${process.env.PUBLIC_URL}/messages`}><Button style={{paddingLeft: "1rem", paddingRight: "1rem"}}>Wszystkie 3<br />komunikaty</Button></Link>;
         const closeTheDoor = <Button color='primary' style={{paddingLeft: "1rem", paddingRight: "1rem"}} >Zamknij je</Button>;
         return (
             <div>
@@ -48,8 +49,10 @@ class HomePage extends React.Component {
                                             światło</Button>
                                     </GridItem>
                                     <GridItem xs={12} sm={12} md={6}>
-                                        <Button size='lg' color='primary' href="/kitchen"
+                                        <Link to={`${process.env.PUBLIC_URL}/kitchen`}>
+                                        <Button size='lg' color='primary'
                                                 className={classes.button}>Gastronomia</Button>
+                                        </Link>
                                     </GridItem>
                                     <GridItem xs={12} sm={12} md={6}>
                                         <Button size='lg' color='primary' className={classes.button}>Higiena</Button>

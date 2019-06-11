@@ -15,14 +15,14 @@ import OvenPage from "views/OvenPage/OvenPage.jsx";
 var hist = createBrowserHistory();
 
 ReactDOM.render(
-  <Router history={hist}>
-    <Switch>
-      <Route path="/home" component={HomePage} />
-      <Route path="/messages" component={Message} />
-      <Route path="/kitchen" component={Category} />
-      <Route path="/oven" component={OvenPage} />
-      <Route path="/" component={LoginPage} />
-    </Switch>
+  <Router history={hist} basename={'/~ptaborow'}>
+        <Switch>
+            <Route path={`${process.env.PUBLIC_URL}/home`} component={HomePage} />
+            <Route path={`${process.env.PUBLIC_URL}/messages`} component={Message} />
+            <Route path={`${process.env.PUBLIC_URL}/kitchen`} component={Category} />
+            <Route path={`${process.env.PUBLIC_URL}/oven`} component={OvenPage} />
+            <Route path={`${process.env.PUBLIC_URL}/`} component={LoginPage} />
+        </Switch>
   </Router>,
   document.getElementById("root")
 );
